@@ -1,0 +1,30 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Infinity Secure Proxy API",
+    "version": "1.0.0",
+    "description": "API gateway for secure communication between Infinity Agents and external AI services (Groq, Hugging Face)."
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Check server status",
+        "responses": { "200": { "description": "Server active" } }
+      }
+    },
+    "/groq": {
+      "post": {
+        "summary": "Send data to Groq API",
+        "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Groq response" } }
+      }
+    },
+    "/huggingface": {
+      "post": {
+        "summary": "Send inference request to Hugging Face",
+        "requestBody": { "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": { "200": { "description": "Hugging Face response" } }
+      }
+    }
+  }
+}
